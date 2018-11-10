@@ -7,7 +7,7 @@
 filename=$(date '+%d-%m-%Y')
 
 # Delete archive volumes older than 1 minute
-find /Users/zamir/temp/Back/* -type d -ctime +11d -exec rm -rf {} \;
+find /Users/zamir/cloud.mail/backup/* -type d -ctime +11d -exec rm -rf {} \;
 
 # Create archive volume folder
 mkdir /Users/zamir/cloud.mail/backup/$filename
@@ -26,7 +26,7 @@ split -b 1900m /Users/zamir/temp/$filename.tar \
 # Remove original archive file
 rm -rf /Users/zamir/temp/$filename.tar
 
-Delete archive volumes older than 1 minute
+# Delete archive volumes from USB drive older than 11 days minute
 find /Volumes/Backup/backup/** -type d -ctime +11d -exec rm -rf {} \;
 
 #Copy archive volume to USB drive
